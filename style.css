@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #f8ecec;
+}
+
+/* CSS para Header */
+
+header {
+    display: flex;
+    margin-bottom: 3vh;
+}
+
+.titulo {
+    align-items: center;
+    display: flex;
+    margin-left: 30vw;
+}
+
+.logo {
+    width: 10%;
+    margin: 2vh 0 0 0;
+}
+
+/* CSS para Main */
+
+.inicio {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    height: 75vh;
+}
+
+.boton-jugar, .boton-palabra {
+    padding: 3% 6%;
+    background-color: #ccc;
+    margin-inline: auto;
+    margin-bottom: 3vh;
+    border-radius: 50%;
+    border: 3px solid;
+}
+
+footer {
+    display: flex;
+    height: 11vh;
+}
