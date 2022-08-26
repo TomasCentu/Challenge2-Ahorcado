@@ -4,28 +4,44 @@
     <head>
 
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Nueva Palabra </title>
-        <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="script.js"></script>
+        <script src="https://kit.fontawesome.com/807d87a557.js" crossorigin="anonymous"></script>
+        <title> Ahorcado - Nueva Palabra </title>
+        <link rel="icon" href="images/icon.png">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/style-palabra.css">
+        <script type="text/javascript" src="script/script-palabra.js"></script>
     </head>
 
     <body>
 
-        <header>
+        <img src="images/fondo.jpg" alt="fondo de cielo nublado estilo pixel-art" class="img-fondo">
 
+        <header>
             <img class="logo" src="images/Logo.png" alt="logo de alura">
-            <h1 class="titulo" > elija una palabra nueva </h1>
+            <h1 class="titulo">Juego del Ahorcado</h1>
         </header>
 
         <main>
-            <a href="index.html" class="boton-jugar"> Volver a Inicio </a>
+
+            <div class= "inicio">
+                <h2 class="sub-titulo">Escriba una nueva palabra</h2>
+                <p class="explicacion">se asignara una nueva palabra dentro del juego entre las ya existentes</p>
+
+                <textarea class="palabra" placeholder="ingrese su palabra..."></textarea>
+
+                <a href="#" class="boton-agregar">Agregar palabra </a>  <!-- agregar onclick para agregar palabra al array del juego -->
+                <a href="index.html" class="boton-volver">volver a Inicio </a> 
+            </div>           
         </main>
 
         <footer>
             
-            <h2> datos </h2>
+            <div>
+
+                <i class="fa-brands fa-github"><a href="https://github.com/TomasCentu"> Github/TomasCentu</a></i>
+                <i class="fa-brands fa-linkedin"><a href="https://www.linkedin.com/in/tomascenturion/"> Linkedin/Tomascenturion</a></i> 
+            </div>
         </footer>
     </body>
 </html>

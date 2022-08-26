@@ -4,28 +4,48 @@
     <head>
 
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Ahorcado - juego </title>
-        <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="script.js"></script>
+        <script src="https://kit.fontawesome.com/807d87a557.js" crossorigin="anonymous"></script>
+        <title> Ahorcado - Nueva Palabra </title>
+        <link rel="icon" href="images/icon.png">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/style-juego.css">
+        <script type="text/javascript" src="script/script-palabra.js"></script>
     </head>
 
     <body>
 
-        <header>
+        <img src="images/fondo.jpg" alt="fondo de cielo nublado estilo pixel-art" class="img-fondo-game">
 
+        <header>
             <img class="logo" src="images/Logo.png" alt="logo de alura">
-            <h1 class="titulo" > Juego del Ahorcado </h1>
+            <h1 class="titulo">Juego del Ahorcado</h1>
+
+            <a href="index.html" class="boton-volver">volver a Inicio </a> 
         </header>
 
         <main>
-            <a href="index.html" class="boton-jugar"> Volver a Inicio </a>
+
+            <div class="munieco"></div>
+
+            <div class="separador"></div>
+
+            <div class="letras"></div>
+
+            <div class="letras-malas">
+                <p><b>Letras falladas: </b></p>
+
+                <div class="letras-perdidas"></div>
+            </div>
         </main>
 
         <footer>
             
-            <h2> datos </h2>
+            <div>
+
+                <i class="fa-brands fa-github"><a href="https://github.com/TomasCentu"> Github/TomasCentu</a></i>
+                <i class="fa-brands fa-linkedin"><a href="https://www.linkedin.com/in/tomascenturion/"> Linkedin/Tomascenturion</a></i> 
+            </div>
         </footer>
     </body>
 </html>

@@ -1,0 +1,48 @@
+/* styles para pantalla de selección de nueva palabra */
+
+.explicacion {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.palabra {
+    background: transparent;
+    margin: 40px 0;
+    width: 400px;
+    height: 80px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    outline: none;
+    resize: none;
+}
+
+.boton-agregar, .boton-volver {
+    padding: 3% 6%;
+    background-color: #D9D9D9;
+    color: #A42727;
+    display: block;
+    border-radius: 30px;
+    margin: 5vh auto;
+    text-align: center;
+    font-size: 1.3em;
+    transition: all 0.3s;
+}
+
+.boton-agregar {
+    width: 25vw;
+}
+
+.boton-volver {
+    width: 20vw;
+}
+
+.boton-agregar:hover{
+    background: #cdb9b9;
+    width: 26vw;
+}
+
+.boton-volver:hover {
+    background: #cdb9b9;
+    width: 21vw;
+}
