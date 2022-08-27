@@ -11,6 +11,19 @@ body {
     height: 100vh;
 }
 
+.fondo {
+    position: absolute;
+    z-index: -100;
+    background: radial-gradient(
+                                circle at bottom,
+                                rgba(255,255,255,1) 0%,
+                                rgba(113,139,195,1) 33%,
+                                rgba(52,100,210,1) 86%,
+                                rgb(44 78 149) 100%);
+    width: 100vw;
+    height: 100vh;
+}
+
 .img-fondo {
     position: absolute;
     z-index: -50;
@@ -96,6 +109,10 @@ footer {
     position: absolute;
     bottom: 0;
 
+}
+footer a {
+    font-weight: bold;
+    color: #000;
 }
 
 i {
