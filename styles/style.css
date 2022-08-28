@@ -7,6 +7,10 @@
     text-decoration: none;
 }
 
+a, button {
+    cursor: pointer;
+}
+
 body {
     height: 100vh;
 }
@@ -102,6 +106,14 @@ header {
 .boton-palabra:hover {
     background: #cdb9b9;
     width: 21vw;
+}
+
+.pantalla-palabra {
+    display: none;
+}
+
+.pantalla-juego {
+    display: none;
 }
 
 footer {

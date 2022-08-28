@@ -5,7 +5,7 @@
     font-style: italic;
 }
 
-.palabra {
+.palabra-input {
     background: transparent;
     margin: 40px 0;
     width: 400px;
@@ -18,7 +18,7 @@
     border: none;
 }
 
-.boton-agregar, .boton-volver {
+.boton-agregar, .volver {
     padding: 3% 6%;
     background-color: #D9D9D9;
     color: #A42727;
@@ -28,13 +28,15 @@
     text-align: center;
     font-size: 1.3em;
     transition: all 0.3s;
+    border: none;
 }
 
 .boton-agregar {
     width: 25vw;
+    cursor: pointer;
 }
 
-.boton-volver {
+.volver {
     width: 20vw;
 }
 
@@ -43,7 +45,7 @@
     width: 26vw;
 }
 
-.boton-volver:hover {
+.volver:hover {
     background: #cdb9b9;
     width: 21vw;
 }

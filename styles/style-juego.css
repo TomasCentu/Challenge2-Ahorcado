@@ -12,6 +12,7 @@
 .boton-volver {
     position: absolute;
     right: 0;
+    top: 0;
     padding: 1% 0%;
     background-color: #D9D9D9;
     color: #A42727;

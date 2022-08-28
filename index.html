@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="es">
+
     <head>
 
         <meta charset="UTF-8">
@@ -8,8 +9,14 @@
         <script src="https://kit.fontawesome.com/807d87a557.js" crossorigin="anonymous"></script>
         <title> Ahorcado - inicio </title>
         <link rel="icon" href="images/icon.png">
+
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/style-palabra.css">
+        <link rel="stylesheet" href="styles/style-juego.css">
+
         <script type="text/javascript" src="script/script.js"></script>
+        <script type="text/javascript" src="script/script-palabra.js"></script> 
+        <script type="text/javascript" src="script/script-game.js"></script> 
     </head>
 
     <body>
@@ -23,14 +30,44 @@
             <h1 class="titulo" > Juego del Ahorcado </h1>
         </header>
 
-        <main>
+        <main class="pantalla-inicio"> <!-- pantalla de inicio -->
 
             <div class= "inicio">
                 <h2 class="sub-titulo">Elije una opción</h2>
 
-                <a href="ahorcado.html" class="boton-jugar"> Jugar! </a>
-                <a href="NuevaPalabra.html" class="boton-palabra"> Nueva palabra </a> 
+                <a onclick="jugar()" class="boton-jugar"> Jugar! </a>
+                <a onclick="nuevaPalabra()" class="boton-palabra"> Nueva palabra </a> 
             </div>           
+        </main>
+
+        <main class="pantalla-palabra">  <!-- pantalla de seleccion de nueva palabra -->
+
+            <div class= "inicio">
+                <h2 class="sub-titulo">Escriba una nueva palabra</h2>
+                <p class="explicacion">se asignara una nueva palabra dentro del juego entre las ya existentes</p>
+
+                <textarea  class="palabra-input" placeholder="ingrese su palabra..."></textarea>
+
+                <button onclick="agregar()" class="boton-agregar" type="button">Agregar palabra </button>
+                <a onclick="volverInicio()" class="volver">volver a Inicio </a> 
+            </div>           
+        </main>
+
+        <main class="pantalla-juego"> <!-- pantalla del juego -->
+
+            <a onclick="volverInicio()" class="boton-volver">volver a Inicio </a> 
+
+            <div class="munieco"></div>
+
+            <div class="separador"></div>
+
+            <div class="letras"></div>
+
+            <div class="letras-malas">
+                <p><b>Letras falladas: </b></p>
+
+                <div class="letras-perdidas"></div>
+            </div>
         </main>
 
         <footer>
