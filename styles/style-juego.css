@@ -1,12 +1,19 @@
 /* styles para juego */
 
-.img-fondo-game {
-	position: absolute;
-    z-index: -50;
-    height: 100vh;
-    width: 100vw;
-    filter: blur(4px);
-	mix-blend-mode: hard-light;
+.pantalla-juego {
+    display: none;
+    animation-name: juego;
+    animation-duration: 0.5s;
+}
+
+@keyframes juego {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 100%;
+    }
 }
 
 .boton-volver {

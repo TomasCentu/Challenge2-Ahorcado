@@ -10,9 +10,9 @@
         <title> Ahorcado - inicio </title>
         <link rel="icon" href="images/icon.png">
 
-        <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="styles/style-palabra.css">
         <link rel="stylesheet" href="styles/style-juego.css">
+        <link rel="stylesheet" href="styles/style.css">
 
         <script type="text/javascript" src="script/script.js"></script>
         <script type="text/javascript" src="script/script-palabra.js"></script> 
@@ -30,44 +30,46 @@
             <h1 class="titulo" > Juego del Ahorcado </h1>
         </header>
 
-        <main class="pantalla-inicio"> <!-- pantalla de inicio -->
+        <main>
+            <section class="pantalla-inicio"> <!-- pantalla de inicio -->
 
-            <div class= "inicio">
-                <h2 class="sub-titulo">Elije una opción</h2>
+                <div class= "inicio">
+                    <h2 class="sub-titulo">Elije una opción</h2>
 
-                <a onclick="jugar()" class="boton-jugar"> Jugar! </a>
-                <a onclick="nuevaPalabra()" class="boton-palabra"> Nueva palabra </a> 
-            </div>           
-        </main>
+                    <a onclick="jugar()" class="boton-jugar"> Jugar! </a>
+                    <a onclick="nuevaPalabra()" class="boton-palabra"> Nueva palabra </a> 
+                </div>           
+            </section>
 
-        <main class="pantalla-palabra">  <!-- pantalla de seleccion de nueva palabra -->
+            <section class="pantalla-palabra">  <!-- pantalla de seleccion de nueva palabra -->
 
-            <div class= "inicio">
-                <h2 class="sub-titulo">Escriba una nueva palabra</h2>
-                <p class="explicacion">se asignara una nueva palabra dentro del juego entre las ya existentes</p>
+                <div class= "inicio">
+                    <h2 class="sub-titulo">Escriba una nueva palabra</h2>
+                    <p class="explicacion">se asignara una nueva palabra dentro del juego entre las ya existentes</p>
 
-                <textarea  class="palabra-input" placeholder="ingrese su palabra..."></textarea>
+                    <textarea  class="palabra-input" placeholder="ingrese su palabra..."></textarea>
 
-                <button onclick="agregar()" class="boton-agregar" type="button">Agregar palabra </button>
-                <a onclick="volverInicio()" class="volver">volver a Inicio </a> 
-            </div>           
-        </main>
+                    <button onclick="agregar()" class="boton-agregar" type="button">Agregar palabra </button>
+                    <a onclick="volverInicio()" class="volver">volver a Inicio </a> 
+                </div>           
+            </section>
 
-        <main class="pantalla-juego"> <!-- pantalla del juego -->
+            <section class="pantalla-juego"> <!-- pantalla del juego -->
 
-            <a onclick="volverInicio()" class="boton-volver">volver a Inicio </a> 
+                <a onclick="volverInicio()" class="boton-volver">volver a Inicio </a> 
 
-            <div class="munieco"></div>
+                <div class="munieco"></div>
 
-            <div class="separador"></div>
+                <div class="separador"></div>
 
-            <div class="letras"></div>
+                <div class="letras"></div>
 
-            <div class="letras-malas">
-                <p><b>Letras falladas: </b></p>
+                <div class="letras-malas">
+                    <p><b>Letras falladas: </b></p>
 
-                <div class="letras-perdidas"></div>
-            </div>
+                    <div class="letras-perdidas"></div>
+                </div>
+            </section>
         </main>
 
         <footer>

@@ -1,7 +1,5 @@
 // js para agregar una palabra
 
-
-
 function agregar() {
 
 	var texto = document.querySelector('.palabra-input').value;

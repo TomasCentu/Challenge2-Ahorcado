@@ -7,10 +7,6 @@
     text-decoration: none;
 }
 
-a, button {
-    cursor: pointer;
-}
-
 body {
     height: 100vh;
 }
@@ -40,24 +36,22 @@ body {
 
 header {
     display: flex;
-    margin-bottom: 3vh;
+    margin-bottom: 20px;
 }
 
 .logo {
     position: absolute;
     top: 0;
     left: 0;
-    width: 8%;
-    height: 8%;
-    opacity: 60%;
-    margin: 10px;
+    width: 7vw;
+    height: 7vh;
+    margin-top: 10px;
 }
 
 .titulo {
     padding: 30px;
     margin: auto;
 }
-
 
 /* CSS para Main */
 
@@ -67,12 +61,23 @@ header {
     padding: 20px;
     border-radius: 40px;
     margin: 0 auto;
-    height: 70vh;
     text-align: center;
+    animation-duration: 1s;
+    animation-name: aparece;
+}
+
+@keyframes aparece {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
 }
 
 .sub-titulo {
-    font-size: 2.5em;
+    margin: 10px;
     font-style: italic;
 }
 
@@ -84,11 +89,9 @@ header {
     display: block;
     border-radius: 30px;
     margin: 10vh auto;
-    text-align: center;
     font-size: 1.3em;
     transition: all 0.3s;
 }
-
 
 .boton-jugar {
     width: 25vw;
@@ -108,12 +111,8 @@ header {
     width: 21vw;
 }
 
-.pantalla-palabra {
-    display: none;
-}
-
-.pantalla-juego {
-    display: none;
+a, button {
+    cursor: pointer;
 }
 
 footer {
@@ -122,6 +121,7 @@ footer {
     bottom: 0;
 
 }
+
 footer a {
     font-weight: bold;
     color: #000;
@@ -129,4 +129,77 @@ footer a {
 
 i {
     margin-left: 10px;
+}
+
+/* diseño para otros dispositivos */
+
+@media screen and (min-width: 100px) and (max-width: 300px) {
+    .inicio {
+        width: 80vw;
+    }
+
+    .logo {
+        width: 13vw;
+        height: 4vh;
+    }
+
+    .titulo {
+        padding-top: 23px;
+        margin: auto;
+        font-size: 20px;
+    }
+
+    .palabra-input {
+        margin: 20px 0 0 0;
+    }
+
+    .boton-agregar, .boton-jugar {
+        width: 50vw;
+        margin: 2vh auto;
+    }
+
+    .volver, .boton-palabra {
+        width: 40vw;
+        margin: 2vh auto;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 500px) {
+
+    .logo {
+        width: 15vw;
+        height: 5vh;
+    }
+
+    .inicio {
+        width: 75vw;
+    }
+
+    .boton-agregar, .boton-jugar {
+        width: 40vw;
+    }
+
+    .volver, .boton-palabra {
+        width: 30vw;
+    }
+
+    .boton-volver {
+        top: 7%;
+        width: 25vw;
+    }
+}
+
+@media screen and (min-width: 520px) and (max-width: 1300px) {
+
+    .inicio {
+        width: 70vw;
+    }
+
+    button {
+        margin: 4vh auto;
+    }
+
+    .palabra-input {
+        margin: 20px 0;
+    }
 }

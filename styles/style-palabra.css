@@ -1,5 +1,9 @@
 /* styles para pantalla de selección de nueva palabra */
 
+.pantalla-palabra {
+    display: none;
+}
+
 .explicacion {
     font-size: 14px;
     font-style: italic;
@@ -8,7 +12,7 @@
 .palabra-input {
     background: transparent;
     margin: 40px 0;
-    width: 400px;
+    width: 90%;
     height: 80px;
     font-size: 20px;
     text-align: center;
