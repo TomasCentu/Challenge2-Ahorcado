@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/807d87a557.js" crossorigin="anonymous"></script>
-        <title> Ahorcado - inicio </title>
+        <title> Juego del Ahorcado </title>
         <link rel="icon" href="images/icon.png">
 
         <link rel="stylesheet" href="styles/style-palabra.css">
@@ -58,7 +58,12 @@
 
                 <a onclick="volverInicio()" class="boton-volver">volver a Inicio </a> 
                 
-                <canvas class="pizarra"></canvas>
+                <div class="canvasContenedor">
+
+                    <canvas class="pizarra"></canvas>
+                </div>
+
+                <div class="cartelito"></div>
 
                 <div class="palabra-juego"></div>
 
@@ -68,41 +73,41 @@
 
                     <div class="linea">
 
-                        <button class="letras" type="button" onclick="letra('q')" >Q</button>
-                        <button class="letras" type="button" onclick="letra('w')" >W</button>
-                        <button class="letras" type="button" onclick="letra('e')" >E</button>
-                        <button class="letras" type="button" onclick="letra('r')" >R</button>
-                        <button class="letras" type="button" onclick="letra('t')" >T</button>
-                        <button class="letras" type="button" onclick="letra('y')" >Y</button>
-                        <button class="letras" type="button" onclick="letra('u')" >U</button>
-                        <button class="letras" type="button" onclick="letra('i')" >I</button>
-                        <button class="letras" type="button" onclick="letra('o')" >O</button>
-                        <button class="letras" type="button" onclick="letra('p')" >P</button>
+                        <button class="letras" id="q" type="button" onclick="letra('q')" >Q</button>
+                        <button class="letras" id="w" type="button" onclick="letra('w')" >W</button>
+                        <button class="letras" id="e" type="button" onclick="letra('e')" >E</button>
+                        <button class="letras" id="r" type="button" onclick="letra('r')" >R</button>
+                        <button class="letras" id="t" type="button" onclick="letra('t')" >T</button>
+                        <button class="letras" id="y" type="button" onclick="letra('y')" >Y</button>
+                        <button class="letras" id="u" type="button" onclick="letra('u')" >U</button>
+                        <button class="letras" id="i" type="button" onclick="letra('i')" >I</button>
+                        <button class="letras" id="o" type="button" onclick="letra('o')" >O</button>
+                        <button class="letras" id="p" type="button" onclick="letra('p')" >P</button>
                     </div>
 
                     <div class="linea">
 
-                        <button class="letras" type="button" onclick="letra('a')" >A</button>
-                        <button class="letras" type="button" onclick="letra('s')" >S</button>
-                        <button class="letras" type="button" onclick="letra('d')" >D</button>
-                        <button class="letras" type="button" onclick="letra('f')" >F</button>
-                        <button class="letras" type="button" onclick="letra('g')" >G</button>
-                        <button class="letras" type="button" onclick="letra('h')" >H</button>
-                        <button class="letras" type="button" onclick="letra('j')" >J</button>
-                        <button class="letras" type="button" onclick="letra('k')" >K</button>
-                        <button class="letras" type="button" onclick="letra('l')" >L</button>
-                        <button class="letras" type="button" onclick="letra('ñ')" >Ñ</button>
+                        <button class="letras" id="a" type="button" onclick="letra('a')" >A</button>
+                        <button class="letras" id="s" type="button" onclick="letra('s')" >S</button>
+                        <button class="letras" id="d" type="button" onclick="letra('d')" >D</button>
+                        <button class="letras" id="f" type="button" onclick="letra('f')" >F</button>
+                        <button class="letras" id="g" type="button" onclick="letra('g')" >G</button>
+                        <button class="letras" id="h" type="button" onclick="letra('h')" >H</button>
+                        <button class="letras" id="j" type="button" onclick="letra('j')" >J</button>
+                        <button class="letras" id="k" type="button" onclick="letra('k')" >K</button>
+                        <button class="letras" id="l" type="button" onclick="letra('l')" >L</button>
+                        <button class="letras" id="ñ" type="button" onclick="letra('ñ')" >Ñ</button>
                     </div>
 
                     <div class="linea">
 
-                        <button class="letras" type="button" onclick="letra('z')" >Z</button>
-                        <button class="letras" type="button" onclick="letra('x')" >X</button>
-                        <button class="letras" type="button" onclick="letra('c')" >C</button>
-                        <button class="letras" type="button" onclick="letra('v')" >V</button>
-                        <button class="letras" type="button" onclick="letra('b')" >B</button>
-                        <button class="letras" type="button" onclick="letra('n')" >N</button>
-                        <button class="letras" type="button" onclick="letra('m')" >M</button>
+                        <button class="letras" id="z" type="button" onclick="letra('z')" >Z</button>
+                        <button class="letras" id="x" type="button" onclick="letra('x')" >X</button>
+                        <button class="letras" id="c" type="button" onclick="letra('c')" >C</button>
+                        <button class="letras" id="v" type="button" onclick="letra('v')" >V</button>
+                        <button class="letras" id="b" type="button" onclick="letra('b')" >B</button>
+                        <button class="letras" id="n" type="button" onclick="letra('n')" >N</button>
+                        <button class="letras" id="m" type="button" onclick="letra('m')" >M</button>
                     </div>
                 </div>
 
@@ -113,7 +118,7 @@
                 </div>
             </section>
 
-            <script type="text/javascript" src="script/script-game.js"></script>
+            <script type="text/javascript" src="script/script-game.js" type="button"></script>
         </main>
 
         <footer>

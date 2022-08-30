@@ -23,7 +23,7 @@ function jugar() {
 	word();
 
 	crearPalabra();
-	vidas = 5;
+	vidas = 7;
 	punto = 0;
 	letrasUsadas = [];
 }
