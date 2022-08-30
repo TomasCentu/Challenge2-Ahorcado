@@ -16,7 +16,6 @@
 
         <script type="text/javascript" src="script/script.js"></script>
         <script type="text/javascript" src="script/script-palabra.js"></script> 
-        <script type="text/javascript" src="script/script-game.js"></script> 
     </head>
 
     <body>
@@ -48,6 +47,7 @@
                     <p class="explicacion">se asignara una nueva palabra dentro del juego entre las ya existentes</p>
 
                     <textarea  class="palabra-input" placeholder="ingrese su palabra..."></textarea>
+                    <p class="explicacion">La palabra tiene que tener entre 4 y 7 caracteres</p>
 
                     <button onclick="agregar()" class="boton-agregar" type="button">Agregar palabra </button>
                     <a onclick="volverInicio()" class="volver">volver a Inicio </a> 
@@ -57,19 +57,63 @@
             <section class="pantalla-juego"> <!-- pantalla del juego -->
 
                 <a onclick="volverInicio()" class="boton-volver">volver a Inicio </a> 
+                
+                <canvas class="pizarra"></canvas>
 
-                <div class="munieco"></div>
+                <div class="palabra-juego"></div>
 
                 <div class="separador"></div>
 
-                <div class="letras"></div>
+                <div class="teclado">
 
-                <div class="letras-malas">
-                    <p><b>Letras falladas: </b></p>
+                    <div class="linea">
 
+                        <button class="letras" type="button" onclick="letra('q')" >Q</button>
+                        <button class="letras" type="button" onclick="letra('w')" >W</button>
+                        <button class="letras" type="button" onclick="letra('e')" >E</button>
+                        <button class="letras" type="button" onclick="letra('r')" >R</button>
+                        <button class="letras" type="button" onclick="letra('t')" >T</button>
+                        <button class="letras" type="button" onclick="letra('y')" >Y</button>
+                        <button class="letras" type="button" onclick="letra('u')" >U</button>
+                        <button class="letras" type="button" onclick="letra('i')" >I</button>
+                        <button class="letras" type="button" onclick="letra('o')" >O</button>
+                        <button class="letras" type="button" onclick="letra('p')" >P</button>
+                    </div>
+
+                    <div class="linea">
+
+                        <button class="letras" type="button" onclick="letra('a')" >A</button>
+                        <button class="letras" type="button" onclick="letra('s')" >S</button>
+                        <button class="letras" type="button" onclick="letra('d')" >D</button>
+                        <button class="letras" type="button" onclick="letra('f')" >F</button>
+                        <button class="letras" type="button" onclick="letra('g')" >G</button>
+                        <button class="letras" type="button" onclick="letra('h')" >H</button>
+                        <button class="letras" type="button" onclick="letra('j')" >J</button>
+                        <button class="letras" type="button" onclick="letra('k')" >K</button>
+                        <button class="letras" type="button" onclick="letra('l')" >L</button>
+                        <button class="letras" type="button" onclick="letra('ñ')" >Ñ</button>
+                    </div>
+
+                    <div class="linea">
+
+                        <button class="letras" type="button" onclick="letra('z')" >Z</button>
+                        <button class="letras" type="button" onclick="letra('x')" >X</button>
+                        <button class="letras" type="button" onclick="letra('c')" >C</button>
+                        <button class="letras" type="button" onclick="letra('v')" >V</button>
+                        <button class="letras" type="button" onclick="letra('b')" >B</button>
+                        <button class="letras" type="button" onclick="letra('n')" >N</button>
+                        <button class="letras" type="button" onclick="letra('m')" >M</button>
+                    </div>
+                </div>
+
+                <div class="letras-falladas">
+
+                    <p><b>Letras usadas: </b></p>
                     <div class="letras-perdidas"></div>
                 </div>
             </section>
+
+            <script type="text/javascript" src="script/script-game.js"></script>
         </main>
 
         <footer>

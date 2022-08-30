@@ -1,13 +1,31 @@
 var listaPalabras = [
-	"cosa",
-	"cosas"
+	"alura",
+	"encriptador",
+	"social",
+	"intel",
+	"programa"
 ]
+var palabraJuego = String;
 
-// para cambiar de pantallas
+function word () {
+	var pa = listaPalabras[Math.floor(Math.random() * listaPalabras.length)];
+	return palabraJuego = pa;
+}
+
+// para cambiar de pantallas y colocar la palabra para adivinar 
+
+var palabraJuego;
 
 function jugar() {
 	document.querySelector(".pantalla-inicio").style.display = "none"
 	document.querySelector(".pantalla-juego").style.display = "block"
+
+	word();
+
+	crearPalabra();
+	vidas = 5;
+	punto = 0;
+	letrasUsadas = [];
 }
 
 function nuevaPalabra() {

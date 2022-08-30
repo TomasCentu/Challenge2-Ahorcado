@@ -4,6 +4,7 @@
     display: none;
     animation-name: juego;
     animation-duration: 0.5s;
+    text-align: center;
 }
 
 @keyframes juego {
@@ -18,8 +19,8 @@
 
 .boton-volver {
     position: absolute;
-    right: 0;
     top: 0;
+    right: 0;
     padding: 1% 0%;
     background-color: #D9D9D9;
     color: #A42727;
@@ -33,40 +34,87 @@
 
 .boton-volver:hover {
     background: #cdb9b9;
-    width: 12vw;
 }
 
 .munieco {
     background: rgb(115 97 97 / 50%);
     width: 30vw;
-    height: 50vh;
+    height: 40vh;
+    margin: 0px 3vw;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pizarra {
+    width: 450px; 
+    height: 270px;
+}
+
+.palabra-juego {
+    width: 30vw;
+    height: 50px;
+    justify-content: center;
+    border-left: 0.5px solid black;
+    text-align: center;
     margin: 0 auto;
+    display: inline-flex;
+}
+
+.palabra-magica {
+    border-bottom: 3px solid #000;
+    font-size: 2.5em;
+    margin: 0px 15px;
+    opacity: 0;
 }
 
 .separador {
-    background: #000;
     height: 5px;
     margin: 10px 0;
     width: 100vw;
 }
 
-.letras {
-    width: 50vw;
-    height: 10vh;
-    background: rgb(115 97 97 / 50%);
+.teclado {
+    width: 45vw;
+    height: 20vh;
+    padding: 6px;
+    border-radius: 20px;
+    background: rgb(169 97 97 / 50%);
     margin: 20px auto;
 }
 
-.letras-malas {
-	background: rgb(115 97 97 / 50%);
+.linea {
+    margin: 0 auto;
+    display: table;
+}
+
+.letras {
+    width: 45px;
+    height: 25px;
+    margin: 8px 10px;
+    background: #cdb9b9;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.letras:hover {
+    background: #ffe5e5;
+}
+
+.letras-falladas {
     height: 10vh;
     margin: 0 10px;
     padding: 5px;
 }
 
 .letras-perdidas {
-    width: 90%;
+    width: 55%;
     height: 60%;
+    font-size: 1.2em;
+    text-decoration: line-through;
+    font-weight: bold;
     margin: 5px auto;
-    background: rgb(115 97 97 / 50%);
+    padding: 6px;
+    border-radius: 20px;
+    background: rgb(169 97 97 / 50%);
 }
