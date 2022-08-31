@@ -53,9 +53,11 @@
 }
 
 .pizarra {
-    width: 80vw;
-    height: 20vh;
+    width: 31vw;
+    height: 31vh;
 }
+
+
 
 .palabra-juego {
     text-align: center;
@@ -146,7 +148,48 @@
     font-size: .85em;
 }
 
-@media screen and (min-width: 300px) and (max-width: 400px) {
+@media screen and (min-width: 200px) and (max-width: 350px) {
+    .teclado {
+        width: 90vw;
+        height: 16vh;
+    }
+    .logo {
+        width: 14vw;
+        height: 5vh;
+    }
+    .titulo {
+        padding: 21px;
+        font-size: 1.5em;
+    }
+    header {
+        text-align: center;
+    }
+    .letras {
+        width: 15px;
+        height: 20px;
+        margin: 5px 5px;
+    }
+    .letras-perdidas {
+        width: 80%;
+        height: 60%;
+        font-size: 1em;
+    }
+    .palabra-magica {
+        font-size: 0.6em;
+    }
+    .boton-volver {
+        font-size: 0.6em;
+    }
+    footer {
+        font-size: 0.7em;
+    }   
+    .pizarra {
+        width: 80vw;
+        height: 20vh;
+    }
+}
+
+@media screen and (min-width: 350px) and (max-width: 400px) {
     .teclado {
         width: 90vw;
         height: 16vh;
@@ -170,6 +213,10 @@
     footer {
         font-size: 0.7em;
     }   
+    .pizarra {
+        width: 80vw;
+        height: 20vh;
+    }
 }
 
 @media screen and (min-width: 400px) and (max-width: 700px) {
@@ -210,6 +257,10 @@
     footer {
         font-size: 0.7em;
     }
+    .pizarra {
+        width: 50vw;
+        height: 20vh;
+    }
 }
 
 @media screen and (min-width: 700px) and (max-width: 850px){
@@ -235,6 +286,10 @@
     .logo {
         width: 12vw;
         height: 6vh;
+    }
+    .pizarra {
+        width: 50vw;
+        height: 20vh;
     }
 }
 
