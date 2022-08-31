@@ -57,8 +57,6 @@
     height: 31vh;
 }
 
-
-
 .palabra-juego {
     text-align: center;
     margin: 0px 0 0px 20px;
@@ -72,7 +70,7 @@
 
 .teclado {
     width: 45vw;
-    height: 20vh;
+    height: 22vh;
     padding: 6px;
     border-radius: 15px;
     background: rgb(169 97 97 / 50%);
@@ -92,7 +90,7 @@
 .letras {
     width: 35px;
     height: 25px;
-    margin: 8px 10px;
+    margin: 6px 10px;
     background: #ffe5e5;
     border-radius: 5px;
     transition: all 0.5s;
@@ -109,7 +107,7 @@
 }
 
 .letras-perdidas {
-    width: 55%;
+    width: 42%;
     height: 60%;
     font-size: 1.2em;
     margin: 5px auto;
@@ -124,10 +122,10 @@
     position: absolute;
     border-radius: 10px;
     padding: 10px;
-    height: 35vh;
+    height: 40vh;
     width: 32vw;
     top: 25%;
-    left: 40%;
+    left: 30%;
     z-index: 100;
     font-size: 1.5em;
     animation-name: gg;
@@ -150,8 +148,17 @@
 
 @media screen and (min-width: 200px) and (max-width: 350px) {
     .teclado {
-        width: 90vw;
-        height: 16vh;
+        width: 95vw;
+        height: 16vh
+    }
+    .cartelito {
+        width: 55vw;
+        left: 15%;
+        height: 32vh;
+        font-size: 1.5em;
+    }
+    .text-final {
+        font-size: .5em;
     }
     .logo {
         width: 14vw;
@@ -166,8 +173,8 @@
     }
     .letras {
         width: 15px;
-        height: 20px;
-        margin: 5px 5px;
+        height: 15px;
+        margin: 5px 2px;
     }
     .letras-perdidas {
         width: 80%;
@@ -192,12 +199,18 @@
 @media screen and (min-width: 350px) and (max-width: 400px) {
     .teclado {
         width: 90vw;
-        height: 16vh;
+        height: 18vh;
     }
     .letras {
         width: 20px;
         height: 20px;
         margin: 5px 5px;
+    }
+    .cartelito {
+        left: 15%;
+        font-size: 0.85em;
+        height: 30vh;
+        width: 50vw;
     }
     .letras-perdidas {
         width: 80%;
@@ -223,10 +236,6 @@
     .teclado {
         width: 90vw;
         height: 18vh;
-        padding: 6px;
-        border-radius: 15px;
-        background: rgb(169 97 97 / 50%);
-        margin: 20px auto;
     }
     .logo {
         width: 12vw;
@@ -239,7 +248,8 @@
     }
     .letras {
         width: 25px;
-        margin: 8px 5px;
+        margin: 5px 4px;
+        height: 18px;
     }
     .boton-volver {
         top: 84%;
@@ -251,7 +261,7 @@
     }
     .cartelito {
         left: 4vh;
-        height: 25vh;
+        height: 40vh;
         width: 85vw;
     }
     footer {
@@ -267,19 +277,19 @@
     .letras {
         width: 50px;
         height: 25px;
-        margin: 8px 6px;
+        margin: 8px 6px;;
     }
     .teclado {
         width: 91vw;
-        height: 18vh;
-        margin: 30px auto;
+        height: 24vh;
+        margin: 20px auto;
     }
     .letras-perdidas {
         width: 75%;
         font-size: 1.2em;
     }   
     .cartelito {
-        height: 21vh;
+        height: 40vh;
         width: 50vw;
         left: 25%;
     }
@@ -300,20 +310,20 @@
     } 
     .teclado {
         width: 70vw;
-        height: 22vh;
+        height: 24vh;
         margin: 5px auto;
     }
     .letras {
         width: 35px;
         height: 25px;
         margin: 8px 10px;
-    } 
+    }
     .letras-perdidas {
         width: 65%;
         font-size: 1.5em;
     }  
     .cartelito {
-        height: 15vh;
+        height: 36vh;
         width: 50vw;
         left: 25%;
     }
@@ -325,7 +335,7 @@
     }
     .teclado {
         width: 70vw;
-        height: 22vh;
+        height: 24vh;
         margin: 5px auto;
     }
 }

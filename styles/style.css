@@ -134,13 +134,13 @@ i {
 /* diseño para otros dispositivos */
 
 @media screen and (min-width: 100px) and (max-width: 300px) {
-    .inicio {
-        width: 80vw;
-    }
-
     .logo {
         width: 13vw;
         height: 4vh;
+    }
+
+    .inicio {
+        width: 75vw;
     }
 
     .titulo {
@@ -164,7 +164,7 @@ i {
     }
 }
 
-@media screen and (min-width: 320px) and (max-width: 500px) {
+@media screen and (min-width: 300px) and (max-width: 500px) {
 
     .logo {
         width: 15vw;
@@ -175,16 +175,20 @@ i {
         width: 75vw;
     }
 
-    .boton-agregar, .boton-jugar {
+    .boton-jugar {
         width: 40vw;
     }
 
     .volver, .boton-palabra {
         width: 30vw;
     }
+    .palabra-input {
+        margin: 0;
+        font-size: 1em;
+    }
 }
 
-@media screen and (min-width: 520px) and (max-width: 1300px) {
+@media screen and (min-width: 500px) and (max-width: 1300px) {
 
     .inicio {
         width: 70vw;
