@@ -182,11 +182,6 @@ i {
     .volver, .boton-palabra {
         width: 30vw;
     }
-
-    .boton-volver {
-        top: 7%;
-        width: 25vw;
-    }
 }
 
 @media screen and (min-width: 520px) and (max-width: 1300px) {

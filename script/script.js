@@ -5,7 +5,9 @@ var listaPalabras = [
 	"intel",
 	"programa"
 ]
+
 var palabraJuego = String;
+var game = false;
 
 function word () {
 	var pa = listaPalabras[Math.floor(Math.random() * listaPalabras.length)];
@@ -14,18 +16,22 @@ function word () {
 
 // para cambiar de pantallas y colocar la palabra para adivinar 
 
-var palabraJuego;
-
 function jugar() {
 	document.querySelector(".pantalla-inicio").style.display = "none"
 	document.querySelector(".pantalla-juego").style.display = "block"
 
-	word();
+	// para que solo se inicie una vez el juego
+	if (game === false) {
 
-	crearPalabra();
-	vidas = 7;
-	punto = 0;
-	letrasUsadas = [];
+		word();
+
+		crearPalabra();
+		vidas = 7;
+		punto = 0;
+		letrasUsadas = [];
+
+		game = true;
+	}	
 }
 
 function nuevaPalabra() {

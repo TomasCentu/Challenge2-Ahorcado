@@ -2,6 +2,7 @@
 
 document.addEventListener('keydown', tecladoLetra);
 var magico = document.querySelector(".palabra-juego"); 
+var final = document.querySelector(".cartelito");
 var vidas;
 var punto;
 var letrasUsadas;
@@ -10,16 +11,31 @@ var gg;
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d")
 
-// agarra la palabra elegida y la crea en el HTML con su clase
+// agarra la palabra elegida y pone los guinos en su div con su clase correspondiente
 function crearPalabra(){ 
 
     for (let i = 0; i < palabraJuego.length; i++){
 
     	let div = document.createElement("div");
         div.classList.add("palabra-magica");
-        div.textContent = palabraJuego[i];
+        div.textContent = "_";
         magico.appendChild(div);
     }
+}
+
+// cambia los guiones por la letra correspondiente
+function cambio(letra) {
+
+	let { children } = magico;
+
+	for (var i in palabraJuego) {
+
+		if (letra === palabraJuego[i]) {
+
+			children[i].innerHTML = letra;
+			punto++;
+		}
+	}
 }
 
 // agarra las letras que ya se intodujeron y las pone en la lista, para no volver a usarlas
@@ -119,7 +135,7 @@ function error () {
 				ctx.lineTo(195, 120);
 				ctx.stroke();
 				gg = "Perdiste!";
-				cartelito()
+				cartelito();
 				vidas--;
 				break;
 		}
@@ -144,34 +160,34 @@ function letra(letra) {
 	if (palabraJuego.includes(letra) && !letrasUsadas.includes(letra) && vidas > 0) {
 
 		letritaUsada(letra);
-
-		const { children } = magico;
-
-		for (let i = 0; i < children.length; i++) {
-
-	        if (children[i].textContent === letra) {
-
-	            children[i].style.opacity = "100%";
-	            punto = punto +1;
-	        } 
-	    } 
+		cambio(letra);
 
 	    if (punto === palabraJuego.length) {
 	    	gg = "Ganaste! "
 	    	cartelito() 
 	    }
+	} 
 
-	} else if (!letrasUsadas.includes(letra)){
+	else if (!letrasUsadas.includes(letra)){
 
 		error();
 		letritaUsada(letra);
 	}
 }
 
+// cartel de victoria o derrota, y saca boton de refrescar pagina
 function cartelito() {
 
 	var cartel = document.querySelector(".cartelito");
-
 	cartel.style.display = "block";
-	cartel.innerHTML = gg + "<br><br>" + " Para resetear el juego deberas refrescar la pagina :c" + "<br>" + "Haciendo 'F5' o apretando el boton en tu navegador";
+
+	let div = document.createElement("p");
+        div.classList.add("text-final");
+        div.innerHTML = gg + "<br><br>" + " Para resetear el juego deberas refrescar la pagina :c" + "<br>" + 'apretando el boton en tu navegador (o F5), o pulsando el siguiente boton.' + "<br><br>"+ '<a onclick="volverJugar()" class="boton-reset">volver a jugar </a>';
+        final.appendChild(div);
+}
+
+// para refrescar la pagina
+function volverJugar() {	
+	location.reload();
 }
