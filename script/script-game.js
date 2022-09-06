@@ -1,63 +1,75 @@
-
-
 document.addEventListener('keydown', tecladoLetra);
-var magico = document.querySelector(".palabra-juego"); 
-var final = document.querySelector(".cartelito");
-var vidas;
-var punto;
-var letrasUsadas;
-var gg;
 
+const palabraContenedor = document.querySelector(".palabra-juego"); 
+const cartelFinal = document.querySelector(".cartelito");
+const tituloFinal = document.querySelector(".titulo-final");
+const usadas = document.querySelector(".letras-perdidas");
+
+var vidas, punto, letrasUsadas, finalJuego;
+
+// seleccion de canvas
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d")
 
-// agarra la palabra elegida y pone los guinos en su div con su clase correspondiente
+// toma el evento de click en los botones del teclado digital
+function click(event) {
+	const boton = event.target;
+	boton.disabled = true;
+	const a = boton.textContent;
+	letra(a);	
+}
+
+// toma las letras del teclado y las pasa como argumento por la funcion letras()
+function tecladoLetra (event) {
+
+	let letraTeclado = event.key;
+
+    if (letraTeclado.match(/^[a-zñ]$/i) && !letrasUsadas.includes(letraTeclado)) {
+        letra(letraTeclado);
+    };
+}
+
+// agarra la palabra elegida y pone los guiones en su div con su clase correspondiente
 function crearPalabra(){ 
 
     for (let i = 0; i < palabraJuego.length; i++){
 
     	let div = document.createElement("div");
-        div.classList.add("palabra-magica");
+        div.classList.add("letra-oculta");
         div.textContent = "_";
-        magico.appendChild(div);
+        palabraContenedor.appendChild(div);
     }
 }
 
-// cambia los guiones por la letra correspondiente
-function cambio(letra) {
+// cambia los guiones por la letra correspondiente en la palabra oculta
+function cambioLetra(letra) {
 
-	let { children } = magico;
+	let { children } = palabraContenedor;
 
 	for (var i in palabraJuego) {
 
 		if (letra === palabraJuego[i]) {
 
-			children[i].innerHTML = letra;
+			children[i].innerHTML = letra.toUpperCase();
 			punto++;
 		}
 	}
 }
 
-// agarra las letras que ya se intodujeron y las pone en la lista, para no volver a usarlas
+// agarra las letras que ya se intodujeron y las pone en la lista de letras usadas
+// para no volver a usarlas en el juego
 function letritaUsada(letra) {
-
-	let uso = document.querySelector(".letras-perdidas");
 
 	if (!letrasUsadas.includes(letra)){
 
 		letrasUsadas.push(letra);
-		uso.innerHTML = letrasUsadas; 
+		usadas.innerHTML = letrasUsadas; 
 		console.log(letrasUsadas);		
 	}
 }
 
-// solamente estetico para que el boton precionado cambie de opacidad
-function colorBoton (letra) {
-
-	document.querySelector("#"+letra).classList.add("presionado");
-}
-
-// al fallar va dibujando en canvas al monigote
+// al fallar la letra, va dibujando en canvas al monigote por partes
+// con respecto a las vidas que se tengan en el momento
 function error () {
 
 	if (punto !== palabraJuego.length) {
@@ -83,7 +95,7 @@ function error () {
 				vidas--;
 				break;
 			case 6:
-			    // cabeza con horca
+			    // cabeza con soga
 			    ctx.beginPath(); 
 				ctx.moveTo(180, 40);
 				ctx.arc(180, 30, 10, 2*Math.PI, 0)
@@ -134,37 +146,28 @@ function error () {
 				ctx.moveTo(180, 90);
 				ctx.lineTo(195, 120);
 				ctx.stroke();
-				gg = "Perdiste!";
-				cartelito();
+				// cartel de derrota
+				finalJuego = "Perdiste!";
+				fin();
 				vidas--;
 				break;
 		}
 	}
 }
 
-// toma las letras del teclado y las pasa como argumento por la funcion letras()
-function tecladoLetra (event) {
-
-	let letraTeclado = event.key;
-
-    if (letraTeclado.match(/^[a-zñ]$/i) && !letrasUsadas.includes(letraTeclado)) {
-        letra(letraTeclado);
-    };
-}
-
-// encargada de tomar las letras y verificar para hacer aparecer las letras encontradas, o tomarlas como error
+// toma las letras elegidas y verifica que esten dentro de la palabra oculta del juego
+// para hacer aparecer las letras encontradas en pantalla, o tomarlas como error
 function letra(letra) {
-
-	colorBoton(letra);
 
 	if (palabraJuego.includes(letra) && !letrasUsadas.includes(letra) && vidas > 0) {
 
 		letritaUsada(letra);
-		cambio(letra);
+		cambioLetra(letra);
 
+		// si se aciertan todas las letras sale el cartel de ganador
 	    if (punto === palabraJuego.length) {
-	    	gg = "Ganaste! "
-	    	cartelito() 
+	    	finalJuego = "Ganaste! "
+	    	fin() 
 	    }
 	} 
 
@@ -176,18 +179,40 @@ function letra(letra) {
 }
 
 // cartel de victoria o derrota, y saca boton de refrescar pagina
-function cartelito() {
+function fin() {
 
-	var cartel = document.querySelector(".cartelito");
-	cartel.style.display = "block";
+	cartelFinal.style.display = "block";
 
-	let div = document.createElement("p");
-        div.classList.add("text-final");
-        div.innerHTML = gg + "<br><br>" + " Para resetear el juego deberas refrescar la pagina :c" + "<br>" + 'apretando el boton en tu navegador (o F5), o pulsando el siguiente boton.' + "<br><br>"+ '<a onclick="volverJugar()" class="boton-reset">volver a jugar </a>';
-        final.appendChild(div);
+    tituloFinal.innerHTML = finalJuego;
 }
 
-// para refrescar la pagina
+// resetea valores para volver a jugar
 function volverJugar() {	
+	cartelFinal.style.display = "none";
+	tituloFinal.innerHTML = "";
+	palabraJuego = "";
+	palabraContenedor.innerHTML = "";
+	letrasUsadas = "";
+	usadas.innerHTML = letrasUsadas; 
+
+	for (let i = 97; i <= 122; i++){
+
+		let letra = String.fromCharCode(i); 
+		let boton = document.getElementById(letra);
+		boton.disabled = false;
+	}
+
+	let letra = String.fromCharCode(164); 
+	let boton = document.getElementById("ñ");
+	boton.disabled = false;
+
+	word();
+	crearPalabra();
+	vidas = 7;
+	punto = 0;
+	letrasUsadas = [];
+}
+
+function reset() {	
 	location.reload();
 }

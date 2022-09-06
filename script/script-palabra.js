@@ -1,4 +1,4 @@
-// js para agregar una palabra
+// agrega una palabra a las ya existentes
 
 function agregar() {
 
