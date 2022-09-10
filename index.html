@@ -48,7 +48,7 @@
                     <h2 class="sub-titulo">Escriba una nueva palabra</h2>
                     <p class="explicacion">se asignara una nueva palabra dentro del juego entre las ya existentes</p>
 
-                    <textarea  class="palabra-input" placeholder="ingrese su palabra..."></textarea>
+                    <textarea  class="palabra-input" placeholder="ingrese su palabra..." minlength="4" maxlength="7"></textarea>
                     <p class="explicacion">La palabra tiene que tener entre 4 y 7 caracteres</p>
 
                     <button onclick="agregar()" class="boton-agregar" type="button">Agregar palabra </button>
@@ -67,7 +67,8 @@
 
                 <!-- cartel de "final del juego" con sus botones -->
                 <div class="cartelito">
-                    <h1 class="titulo-final"></h1>                    
+                    <h1 class="titulo-final"></h1> 
+                    <br>                   
                     <a onclick="volverJugar()" class="boton-reset" type="button">volver a jugar </a>
                     <a onclick="reset()" class="boton-reset" type="button">Salir</a>
                 </div>

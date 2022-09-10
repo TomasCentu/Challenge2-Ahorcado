@@ -13,9 +13,9 @@ const ctx = canvas.getContext("2d")
 
 // toma el evento de click en los botones del teclado digital
 function click(event) {
-	const boton = event.target;
+	let boton = event.target;
 	boton.disabled = true;
-	const a = boton.textContent;
+	let a = boton.textContent;
 	letra(a);	
 }
 
@@ -23,10 +23,13 @@ function click(event) {
 function tecladoLetra (event) {
 
 	let letraTeclado = event.key;
+	let boton = document.getElementById(letraTeclado);
+
 
     if (letraTeclado.match(/^[a-zñ]$/i) && !letrasUsadas.includes(letraTeclado)) {
-        letra(letraTeclado);
-    };
+        letra(letraTeclado.toUpperCase());
+        boton.disabled = true;
+    }
 }
 
 // agarra la palabra elegida y pone los guiones en su div con su clase correspondiente
@@ -161,7 +164,6 @@ function letra(letra) {
 
 	if (palabraJuego.includes(letra) && !letrasUsadas.includes(letra) && vidas > 0) {
 
-		letritaUsada(letra);
 		cambioLetra(letra);
 
 		// si se aciertan todas las letras sale el cartel de ganador
@@ -173,9 +175,9 @@ function letra(letra) {
 
 	else if (!letrasUsadas.includes(letra)){
 
-		error();
-		letritaUsada(letra);
+		error();	
 	}
+	letritaUsada(letra);
 }
 
 // cartel de victoria o derrota, y saca boton de refrescar pagina
