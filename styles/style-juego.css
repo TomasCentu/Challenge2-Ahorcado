@@ -3,7 +3,7 @@
 .pantalla-juego {
     display: none;
     animation-name: juego;
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
     text-align: center;
 }
 
